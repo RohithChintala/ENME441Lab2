@@ -12,21 +12,21 @@ def myCallback(channel):
   if channel == 20:
 	  pwm1.start(0)
 	  for dc in range(101):     
-		  pwm1.ChangeDutyCycle(dc)   # set duty cycle
-		  sleep(0.005)               # sleep 10 ms
+		  pwm1.ChangeDutyCycle(dc)
+		  sleep(0.005)
 	  for dc in range(101):
       #decrease = 101-dc
-      pwm.ChangeDutyCycle(dc)   # set duty cycle
-      sleep(0.005)               # sleep 10 ms
+      pwm.ChangeDutyCycle(dc)
+      sleep(0.005)
   elif channel == 21:
 	  pwm2.start(0)
 	  for dc in range(101):     
-		  pwm2.ChangeDutyCycle(dc)   # set duty cycle
-		  sleep(0.005)               # sleep 10 ms
+		  pwm2.ChangeDutyCycle(dc)
+		  sleep(0.005)
 	  for dc in range(101):     
       #decrease = 101-dc
-		  pwm2.ChangeDutyCycle(dc)   # set duty cycle
-		  sleep(0.005)               # sleep 10 ms
+		  pwm2.ChangeDutyCycle(dc)
+		  sleep(0.005)
 
 pwm1= GPIO.PWM(4, 1) 
 pwm2= GPIO.PWM(17, 1) 
