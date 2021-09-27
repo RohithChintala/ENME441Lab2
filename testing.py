@@ -7,7 +7,8 @@ GPIO.setup(17, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
 GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
+pwm2.start(0)
+pwm1.start(0)
 
 def myCallback(channel):
   if channel == 20:
@@ -28,8 +29,6 @@ GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=100)
 try:
   while 1:
     pwm3.start(50)
-    pwm2.start(0)
-    pwm1.start(0)
 except KeyboardInterrupt:
   print('\nExiting')
   
