@@ -1,0 +1,26 @@
+import RPi.GPIO as GPIO
+from time import sleep
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(4, GPIO.OUT)
+GPIO.setup(17, GPIO.OUT)
+GPIO.setup(27, GPIO.OUT)
+GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+pwm1= GPIO.PWM(4, 1) 
+pwm2= GPIO.PWM(17, 1) 
+pwm3= GPIO.PWM(27, 1) 
+try: 
+  while 1:
+    GPIO.add_event_detect(20, GPIO.RISING, callback=myCallback, bouncetime=100)
+	  GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=100)
+    pwm3.start(50)
+except KeyboardInterrupt:
+  print('\nExiting')
+  
+
+pwm1.stop()
+pwm2.stop()
+pwm3.stop()
+GPIO.cleanup()
