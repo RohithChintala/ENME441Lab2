@@ -33,8 +33,8 @@ try:
   while 1:
   	GPIO.add_event_detect(20, GPIO.RISING, callback=myCallback, bouncetime=100)
     #gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=100)
-	  GPIO.add_event_detect(21,GPIO.RISING,callback=myCallback, bouncetime=100)
-	  pwm3.start(50)
+	  GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=100)
+	  pwm3.start(50) 
 
 
 except KeyboardInterrupt:       # stop gracefully on ctrl-C
