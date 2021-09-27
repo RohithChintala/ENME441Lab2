@@ -15,9 +15,9 @@ def myCallback(channel):
 		  pwm1.ChangeDutyCycle(dc)   # set duty cycle
 		  sleep(0.005)               # sleep 10 ms
 	  for dc in range(101):
-      decrease = 101 - dc
-		  pwm.ChangeDutyCycle(decrease)   # set duty cycle
-		  sleep(0.005)               # sleep 10 ms
+      decrease = 101-dc
+      pwm.ChangeDutyCycle(decrease)   # set duty cycle
+      sleep(0.005)               # sleep 10 ms
   elif channel == 21:
 	  pwm2.start(0)
 	  for dc in range(101):     
