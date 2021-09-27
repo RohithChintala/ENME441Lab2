@@ -20,7 +20,7 @@ try:
 
 except KeyboardInterrupt:       # stop gracefully on ctrl-C
 	print('\nExiting')
-  GPIO.cleanup()
+  
 
 pwm1.stop()
 pwm2.stop()
