@@ -8,7 +8,7 @@ GPIO.setup(27, GPIO.OUT)
 GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-def myCallback1(channel):
+def myCallback(channel):
   if channel == 20:
 	  pwm1.start(0)
 	  for dc in range(101):     
