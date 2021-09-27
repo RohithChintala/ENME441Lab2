@@ -24,21 +24,21 @@ def myCallback(channel):
     sleep(.005)
 
   elif channel == 21:
-	  for g in range(101):
-		  pwm2.ChangeDutyCycle(g)
-		  sleep(0.005)
-    for e in range(100):
-      down = 100 - e
-      pwm2.ChangeDutyCycle(e)
+	 for g in range(101):
+	  pwm2.ChangeDutyCycle(g)
+		sleep(0.005)
+   for e in range(100):
+    down = 100 - e
+    pwm2.ChangeDutyCycle(e)
     
 
 GPIO.add_event_detect(20, GPIO.RISING, callback=myCallback, bouncetime=100)
 GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=100)
 try:
-  while 1:
-    pwm3.start(50)
+ while 1:
+  pwm3.start(50)
 except KeyboardInterrupt:
-  print('\nExiting')
+ print('\nExiting')
   
 
 pwm1.stop()
