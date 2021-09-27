@@ -18,6 +18,7 @@ def myCallback(channel):
       decrease = 101 - down
 		  pwm1.ChangeDutyCycle(decrease)
 		  sleep(0.005)
+      
   elif channel == 21:
 	  pwm2.start(0)
 	  for dc in range(101):  
