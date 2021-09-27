@@ -1,13 +1,6 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.OUT)
-GPIO.setup(17, GPIO.OUT)
-GPIO.setup(27, GPIO.OUT)
-GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
 def myCallback(channel):
   if channel == 20:
 	  pwm1.start(0)
@@ -25,6 +18,15 @@ def myCallback(channel):
 	  for dc in range(101):     
 		  pwm2.ChangeDutyCycle(101-dc)   # set duty cycle
 		  sleep(0.005)               # sleep 10 ms
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(4, GPIO.OUT)
+GPIO.setup(17, GPIO.OUT)
+GPIO.setup(27, GPIO.OUT)
+GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+
 
 pwm1= GPIO.PWM(4, 1) 
 pwm2= GPIO.PWM(17, 1) 
