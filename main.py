@@ -28,7 +28,7 @@ pwm3.stop()
 GPIO.cleanup()
 
 def myCallback1(channel):
-  if channel == 20
+  if channel == 20:
 	  pwm1.start(0)
 	  for dc in range(101):     
 		  pwm1.ChangeDutyCycle(dc)   # set duty cycle
@@ -36,7 +36,7 @@ def myCallback1(channel):
 	  for dc in range(101):     
 		  pwm.ChangeDutyCycle(101-dc)   # set duty cycle
 		  sleep(0.005)               # sleep 10 ms
-  elif channel == 21
+  elif channel == 21:
 	  pwm2.start(0)
 	  for dc in range(101):     
 		  pwm2.ChangeDutyCycle(dc)   # set duty cycle
