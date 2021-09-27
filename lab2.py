@@ -32,7 +32,7 @@ pwm1= GPIO.PWM(4, 1)
 pwm2= GPIO.PWM(17, 1) 
 pwm3= GPIO.PWM(27, 1) 
 try: 
-  #while 1:
+  while 1:
     GPIO.add_event_detect(20, GPIO.RISING, callback=myCallback, bouncetime=100)
     #gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=100)
 	  #GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=100)
