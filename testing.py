@@ -26,6 +26,7 @@ def myCallback(channel):
     pwm1.stop()
 
   if channel == 21:
+    print('21 working')
     for d2 in range(101):
       pwm2.ChangeDutyCycle(d2)
       sleep(0.005)
