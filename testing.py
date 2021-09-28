@@ -39,8 +39,8 @@ def myCallback(channel):
     pwm2.stop()
     
 
-GPIO.add_event_detect(26, GPIO.RISING, callback=myCallback, bouncetime=500)
-GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=500)
+GPIO.add_event_detect(26, GPIO.RISING, callback=myCallback, bouncetime=200)
+GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=200)
 try:
  while 1:
   pwm3.start(50)
