@@ -19,23 +19,23 @@ def myCallback(channel):
     print('26 working')
     for d in range(100):
       pwm1.ChangeDutyCycle(d)
-      sleep(0.01)
+      sleep(0.005)
     for i in range(100):
       decrease = 100-i
       pwm1.ChangeDutyCycle(i)
-      sleep(.01)
+      sleep(.005)
     pwm1.stop()
  
   if channel == 21:
     pwm2.start(0)
     print('21 working')
-    for c in range(101):
+    for c in range(100):
       pwm2.ChangeDutyCycle(c)
-      sleep(0.01)
+      sleep(0.005)
     for f in range(100):
       decrease = 100-f
       pwm2.ChangeDutyCycle(f)
-      sleep(.01)
+      sleep(.005)
     pwm2.stop()
     
 
