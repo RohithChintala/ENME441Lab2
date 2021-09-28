@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) 
 GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
@@ -43,10 +43,6 @@ try:
   pwm3.start(50)
 except KeyboardInterrupt:
  print('\nExiting')
- pwm1.stop()
- pwm2.stop()
- pwm3.stop()
- GPIO.cleanup()
 
   
 
