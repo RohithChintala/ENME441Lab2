@@ -9,7 +9,7 @@ GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 pwm1= GPIO.PWM(4, 1)
 pwm2= GPIO.PWM(17, 1)
-pwm3= GPIO.PWM(27, 1)
+pwm3= GPIO.PWM(27, .5)
 
 
 def myCallback(channel):
