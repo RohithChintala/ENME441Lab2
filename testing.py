@@ -22,7 +22,7 @@ def myCallback(channel):
       sleep(0.005)
     for i in range(100):
       decrease = 100-i
-      pwm1.ChangeDutyCycle(i)
+      pwm1.ChangeDutyCycle(decrease)
       sleep(.005)
     pwm1.stop()
  
@@ -34,7 +34,7 @@ def myCallback(channel):
       sleep(0.005)
     for f in range(100):
       decrease = 100-f
-      pwm2.ChangeDutyCycle(f)
+      pwm2.ChangeDutyCycle(decrease)
       sleep(.005)
     pwm2.stop()
     
