@@ -13,28 +13,25 @@ pwm3= GPIO.PWM(27, 1)
 
 
 def myCallback(channel):
-  print(channel)
   if channel == 26:
     pwm1.start(0)
-    print('26 working')
-    for d in range(100):
-      pwm1.ChangeDutyCycle(d)
+    for i in range(100):
+      pwm1.ChangeDutyCycle(i)
       sleep(0.005)
     for i in range(100):
-      decrease = 100-i
-      pwm1.ChangeDutyCycle(decrease)
+      d = 100-i
+      pwm1.ChangeDutyCycle(d)
       sleep(.005)
     pwm1.stop()
  
   if channel == 21:
     pwm2.start(0)
-    print('21 working')
-    for c in range(100):
-      pwm2.ChangeDutyCycle(c)
+    for i in range(100):
+      pwm2.ChangeDutyCycle(i)
       sleep(0.005)
-    for f in range(100):
-      decrease = 100-f
-      pwm2.ChangeDutyCycle(decrease)
+    for i in range(100):
+      d = 100-i
+      pwm2.ChangeDutyCycle(d)
       sleep(.005)
     pwm2.stop()
     
