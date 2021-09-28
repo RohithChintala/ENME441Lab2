@@ -10,30 +10,31 @@ GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 pwm1= GPIO.PWM(4, 1)
 pwm2= GPIO.PWM(17, 1)
 pwm3= GPIO.PWM(27, 1)
-pwm2.start(0)
-pwm1.start(0)
+
 
 def myCallback(channel):
   print(channel)
   if channel == 26:
+    pwm1.start(0)
     print('26 working')
     for d1 in range(100):
       pwm1.ChangeDutyCycle(d1)
-      sleep(0.005)
+      sleep(0.01)
     for i in range(100):
       decrease = 100-i
       pwm1.ChangeDutyCycle(i)
-      sleep(.005)
+      sleep(.01)
     pwm1.stop()
   if channel == 21:
+    pwm2.start(0)
     print('21 working')
     for d2 in range(101):
       pwm2.ChangeDutyCycle(d2)
-      sleep(0.005)
+      sleep(0.01)
     for i in range(100):
       decrease = 100-i
       pwm2.ChangeDutyCycle(i)
-      sleep(.005)
+      sleep(.01)
     pwm2.stop()
     
 
@@ -44,6 +45,11 @@ try:
   pwm3.start(50)
 except KeyboardInterrupt:
  print('\nExiting')
+ pwm1.stop()
+ pwm2.stop()
+ pwm3.stop()
+ GPIO.cleanup()
+
   
 
 pwm1.stop()
