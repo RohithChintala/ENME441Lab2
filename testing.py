@@ -15,8 +15,8 @@ pwm1.start(0)
 
 def myCallback(channel):
   if channel == 16:
-    for dc in range(101):
-      pwm1.ChangeDutyCycle(dc)
+    for d1 in range(100):
+      pwm1.ChangeDutyCycle(d1)
       sleep(0.005)
     for i in range(100):
       decrease = 100-i
@@ -24,8 +24,8 @@ def myCallback(channel):
       sleep(.005)
 
   if channel == 21:
-    for dc in range(101):
-      pwm1.ChangeDutyCycle(dc)
+    for d2 in range(101):
+      pwm1.ChangeDutyCycle(d2)
       sleep(0.005)
     for i in range(100):
       decrease = 100-i
@@ -33,8 +33,8 @@ def myCallback(channel):
       sleep(.005)
     
 
-GPIO.add_event_detect(16, GPIO.RISING, callback=myCallback, bouncetime=100)
-GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=100)
+GPIO.add_event_detect(16, GPIO.RISING, callback=myCallback, bouncetime=500)
+GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=500)
 try:
  while 1:
   pwm3.start(50)
