@@ -14,6 +14,7 @@ pwm2.start(0)
 pwm1.start(0)
 
 def myCallback(channel):
+  print(channel)
   if channel == 16:
     for d1 in range(100):
       pwm1.ChangeDutyCycle(d1)
