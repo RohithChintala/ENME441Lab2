@@ -17,7 +17,7 @@ def myCallback(channel):
     pwm1.start(0)
     for i in range(100):
       pwm1.ChangeDutyCycle(i)
-      sleep(0.0025)
+      sleep(.0025)
     for i in range(100):
       d = 100-i
       pwm1.ChangeDutyCycle(d)
@@ -28,7 +28,7 @@ def myCallback(channel):
     pwm2.start(0)
     for i in range(100):
       pwm2.ChangeDutyCycle(i)
-      sleep(0.0025)
+      sleep(.0025)
     for i in range(100):
       d = 100-i
       pwm2.ChangeDutyCycle(d)
