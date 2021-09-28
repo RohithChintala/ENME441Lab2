@@ -43,7 +43,7 @@ GPIO.add_event_detect(26, GPIO.RISING, callback=myCallback, bouncetime=200)
 GPIO.add_event_detect(21, GPIO.RISING, callback=myCallback, bouncetime=200)
 try:
  while 1:
-  pwm3.start(50)
+  pwm3.start(100)
 except KeyboardInterrupt:
  print('\nExiting')
  pwm1.stop()
