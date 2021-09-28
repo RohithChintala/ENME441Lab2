@@ -32,7 +32,7 @@ def myCallback(channel):
     for i in range(100):
       d = 100-i
       pwm2.ChangeDutyCycle(d)
-      sleep(.00025)
+      sleep(.0025)
     pwm2.stop()
     
 
